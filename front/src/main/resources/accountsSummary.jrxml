@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="accounts" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6617d02b-0bc0-49f5-9495-1aa7223503db">
+	<property name="ireport.zoom" value="1.9487171000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="accountId" class="java.lang.String"/>
+	<field name="owner" class="java.lang.String"/>
+	<field name="balance" class="java.math.BigDecimal"/>
+	<field name="lastActivity" class="java.util.Date"/>
+	<title>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="4e29a9de-1d6e-4e34-ac5d-9866016d7e99" x="186" y="13" width="182" height="24"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Accounts Summary]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="0e2ba0d8-4833-4c56-9535-12e3a52144c4" x="0" y="0" width="207" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Account Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5fbaf8f6-ef59-4765-a591-004ea7f8e96e" x="207" y="0" width="174" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Owner]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bb4c6316-fe48-4416-8895-1151c5cdc66c" x="381" y="0" width="74" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6071b9e6-6a96-49a6-984f-66838aa3f44c" x="455" y="0" width="100" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Last activity]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="8e162794-694e-4a34-8cf4-44ade6fc5e98" x="0" y="0" width="207" height="20"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{accountId}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="e4061592-592f-4515-b00b-4a23fa6b10b6" x="207" y="0" width="174" height="20"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{owner}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="75f800e8-5171-4ed3-a5b8-4c28a2733e30" x="381" y="0" width="74" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{balance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e23e54c2-4a32-4a10-a35f-258f8dc94973" x="455" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{lastActivity}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="9" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

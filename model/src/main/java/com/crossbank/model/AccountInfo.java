@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  * Represents information on an account.
- * @uathor Dmitry Dobrynin
+ * @author Dmitry Dobrynin
  * Created at 07.02.16 0:27.
  */
 public class AccountInfo {
@@ -19,5 +19,25 @@ public class AccountInfo {
         this.account = account;
         this.balance = balance;
         this.lastActivity = lastActivity;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public Date getLastActivity() {
+        return lastActivity;
+    }
+
+    public String toString() {
+        return "AccountInfo{" +
+                "account=" + account +
+                ", balance=" + balance +
+                ", lastActivity=" + lastActivity +
+                '}';
     }
 }

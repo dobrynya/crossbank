@@ -4,7 +4,7 @@ import java.util.UUID;
 
 /**
  * Represents a bank account.
- * @uathor Dmitry Dobrynin
+ * @author Dmitry Dobrynin
  * Created at 07.02.16 0:25.
  */
 public class Account {
@@ -36,5 +36,12 @@ public class Account {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public String toString() {
+        return "Account{" +
+                "id='" + id + '\'' +
+                ", owner='" + owner + '\'' +
+                '}';
     }
 }

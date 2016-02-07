@@ -1,3 +1,9 @@
 dependencies {
     compile project(":model")
+    compile("net.sf.jasperreports:jasperreports:6.2.0") {
+        exclude module: "olap4j"
+        exclude module: "itext"
+    }
+    compile "com.lowagie:itext:2.1.7"
+    compile "org.codehaus.groovy:groovy-all"
 }
