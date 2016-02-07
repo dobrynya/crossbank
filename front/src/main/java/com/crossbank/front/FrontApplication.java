@@ -1,8 +1,5 @@
 package com.crossbank.front;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +7,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 import sun.security.validator.KeyStores;
-
 import javax.net.ssl.*;
 import java.io.IOException;
 import java.security.KeyManagementException;
@@ -29,12 +25,7 @@ import java.util.Set;
 @SpringBootApplication
 @Configuration
 public class FrontApplication {
-    Logger logger = LoggerFactory.getLogger(FrontApplication.class);
-    @Autowired
-    private RestTemplate client;
-    @Autowired
-    private AccountService accountService;
-    @Value("${key-store-password}")
+    @Value("${server.ssl.key-store-password}")
     private String keyStorePassword;
 
     public static void main(String[] args) {

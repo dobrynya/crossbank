@@ -1,1 +1,1 @@
-include "accounts", "front", "model"
+include "accounts", "front", "model", "transactions"

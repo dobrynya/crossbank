@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="financialPosition" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cb9bdc53-5879-4409-a3ff-18b046675e0a">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="year" class="java.lang.String"/>
+	<field name="cashAndDue" class="java.lang.String"/>
+	<field name="interestEarningDeposits" class="java.lang.String"/>
+	<field name="centralBankFundsSold" class="java.lang.String"/>
+	<field name="tradingAssets" class="java.lang.String"/>
+	<field name="positiveMarketValues" class="java.lang.String"/>
+	<field name="financialAssetsDesignated" class="java.lang.String"/>
+	<field name="securitiesPurchasedUnderResale" class="java.lang.String"/>
+	<field name="securitiesBorrowed" class="java.lang.String"/>
+	<field name="loans" class="java.lang.String"/>
+	<field name="brokerageAndSecurities" class="java.lang.String"/>
+	<field name="remainingAssets" class="java.lang.String"/>
+	<title>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="e3d3b826-fc6a-4408-baf1-a3e4c42f18ef" x="0" y="0" width="802" height="35" forecolor="#0000CC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="19" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Crossbank: Financial Position]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="287" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="3e17c139-3f08-44a3-8aa6-e1cdb3ba2c7c" x="0" y="30" width="634" height="22"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Cash and due from banks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3e58637e-4ee5-4089-8f10-a4f580710324" x="0" y="52" width="634" height="22"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Interest-earning deposits with banks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8041850d-0297-432b-a895-ab035a72e1dd" x="0" y="74" width="634" height="22"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Central bank funds sold, securities purchased under resale agreements and securities borrowed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f911ba6d-ee0d-4314-9bd3-408f92f1bd53" x="0" y="96" width="634" height="22"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Trading assets]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="db47457b-880b-44cd-ba95-c8c523f192b9" x="0" y="184" width="634" height="22"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Securities borrowed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1eb827db-0e2d-4678-a2e4-5a532589d3ab" x="0" y="162" width="634" height="22"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Securities purchased under resale agreements]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="33fbc263-256f-416c-9ec5-066fac0feeb1" x="0" y="118" width="634" height="22"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Positive market values from derivative financial instruments]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8abfc15f-0a99-451e-956f-aa05d55bf49c" x="0" y="140" width="634" height="22"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Financial assets designated at fair value through profit or loss]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de80e444-6087-42ca-a685-4920e1a72e78" x="0" y="206" width="634" height="22"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Loans]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f43140b6-29a3-4cdd-b391-50a10a7aaace" x="0" y="228" width="634" height="22"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Brokerage and securities related receivables]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4ea8d274-09e5-4b71-896f-f79ae370a2cd" x="702" y="0" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[in Euro m.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="856af220-5deb-4cc7-8d10-29574e3f82ab" x="0" y="250" width="634" height="22"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Remaining assets]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="f81d0e04-e144-4292-b3e6-540bcb0181df" x="634" y="30" width="168" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cashAndDue}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="73dd3bb4-3cd9-4c45-97ff-67a76dad9bd4" x="634" y="52" width="168" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{interestEarningDeposits}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fc5a799e-d2f8-48c7-bbc1-b77d93fd752f" x="634" y="74" width="168" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{centralBankFundsSold}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b953027f-b841-4199-85f0-3eeb0d67987a" x="634" y="96" width="168" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tradingAssets}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4a797db5-4aee-4138-9e3a-d67a0df3edac" x="634" y="118" width="168" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{positiveMarketValues}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1049af7b-1814-4383-a779-50a431cecd98" x="634" y="140" width="168" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{financialAssetsDesignated}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="27141553-b5a4-405b-8de5-dbcd4c02000a" x="634" y="162" width="168" height="22"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{securitiesPurchasedUnderResale}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="49d1134f-abed-4784-b79e-480562d170f7" x="634" y="184" width="168" height="22"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{securitiesBorrowed}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dab833dd-66ed-445c-9387-ab86cd469990" x="634" y="206" width="168" height="22"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{loans}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b9afd5e3-cf38-455b-ba0c-2f84c197300d" x="634" y="228" width="168" height="22"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{brokerageAndSecurities}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="78b693e3-6e52-4589-93a8-0581d1064134" x="634" y="250" width="168" height="22"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{remainingAssets}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b9d47dd3-4843-48de-8bdf-aa94d3738f2e" x="0" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{year}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

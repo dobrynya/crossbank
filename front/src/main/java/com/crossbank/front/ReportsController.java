@@ -1,10 +1,7 @@
 package com.crossbank.front;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -15,9 +12,11 @@ import java.io.IOException;
  * Created at 06.02.16 23:44.
  */
 @RestController
-public class ReportsEndpoint {
+public class ReportsController {
     @Autowired
     private AccountsSummaryReporter accountsSummaryReporter;
+    @Autowired
+    private FinancialPositionReporter financialPositionReporter;
 
     @RequestMapping("/")
     public void redirectToIndex(HttpServletResponse response) throws IOException {
@@ -26,11 +25,11 @@ public class ReportsEndpoint {
 
     @RequestMapping(value = "/accountsSummary", method = RequestMethod.GET)
     public void accountsSummary(HttpServletResponse response) throws IOException {
-        accountsSummaryReporter.generate(response.getOutputStream());
+        accountsSummaryReporter.generateAccountsSummaryReport(response.getOutputStream());
     }
 
-    @RequestMapping(value = "/transactionsSummary", method = RequestMethod.GET)
-    public void transactionsSummary(HttpServletResponse response) throws IOException {
-        throw new RuntimeException("Not implemented yet!");
+    @RequestMapping(value = "/financialPosition", method = RequestMethod.GET)
+    public void financialPosition(@RequestParam("year") int year, HttpServletResponse response) throws IOException {
+        financialPositionReporter.generateFinancialPositionReport(year, response.getOutputStream());
     }
 }

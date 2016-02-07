@@ -1,19 +1,14 @@
 package com.crossbank.front;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.io.OutputStream;
-import net.sf.jasperreports.engine.*;
 import com.crossbank.model.AccountInfo;
-import net.sf.jasperreports.engine.export.JRPdfExporter;
-import net.sf.jasperreports.engine.export.ooxml.JRXlsxExporter;
-import net.sf.jasperreports.export.SimpleExporterInput;
-import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JRField;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.io.OutputStream;
+import java.util.Iterator;
 
 /**
  * Generates accounts sammary report.
@@ -21,28 +16,12 @@ import org.springframework.stereotype.Component;
  *         Created at 07.02.2016 17:43
  */
 @Component
-public class AccountsSummaryReporter {
+public class AccountsSummaryReporter extends AbstractReporter {
     @Autowired
     private AccountService accountService;
-    private Logger logger = LoggerFactory.getLogger(AccountsSummaryReporter.class);
 
-    JasperReport jasperReport;
-
-    public AccountsSummaryReporter() throws JRException {
-        jasperReport = JasperCompileManager.compileReport(getClass().getResourceAsStream("/accountsSummary.jrxml"));
-    }
-
-    public void generate(OutputStream outputStream) {
-        try {
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, new HashMap<String, Object>(), createDataSource());
-            JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
-        } catch (Exception e) {
-            logger.error("Could not generate a report!", e);
-            throw new RuntimeException("Could not generate a report!", e);
-        } finally {
-            try { outputStream.close(); }
-            catch (IOException e) { logger.error("Could not close a stream!", e); }
-        }
+    public void generateAccountsSummaryReport(OutputStream outputStream) {
+        generate(outputStream, createDataSource());
     }
 
     protected JRDataSource createDataSource() {
@@ -69,4 +48,6 @@ public class AccountsSummaryReporter {
             }
         };
     }
+
+    public String reportTemplate() { return "/accountsSummary.jrxml"; }
 }

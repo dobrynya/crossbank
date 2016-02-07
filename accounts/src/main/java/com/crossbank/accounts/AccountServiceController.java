@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  *         Created at 07.02.2016 12:59
  */
 @RestController
-public class AccountServicePublisher {
+public class AccountServiceController {
     @Autowired
     private AccountService accountService;
 
