@@ -41,5 +41,10 @@ subprojects {
         baseImage "java:8"
         maintainer "Dmitry Dobrynin <dmitry.v.dobrynin@gmail.com>"
     }
+
+    task buildDockerImage(type: Docker) {
+        addFile(tasks.jar.path, "/")
+        defaultCmd(["java -jar /${tasks.jar.archiveName}"])
+    }
 }
 

@@ -25,4 +25,3 @@ Build instructions:
 
 4. A delivery pipeline offered in the design document includes packaging into a Docker image. This can be easily achieved as a part of standard CI life cycle.
 Further we can deploy a built image so many times as we need to support growing use.
-Dockerfile in the root project directory is just an example
