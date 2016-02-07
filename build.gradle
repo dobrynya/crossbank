@@ -42,9 +42,9 @@ subprojects {
         maintainer "Dmitry Dobrynin <dmitry.v.dobrynin@gmail.com>"
     }
 
-    task buildDockerImage(type: Docker) {
-        addFile(tasks.jar.path, "/")
-        defaultCmd(["java -jar /${tasks.jar.archiveName}"])
+    task buildDockerImage(type: Docker, dependsOn: build) {
+        addFile(tasks.jar.archivePath, "/")
+        defaultCommand(["java", "-jar", "/${tasks.jar.archiveName}"])
     }
 }
 
